@@ -1,0 +1,47 @@
+{
+  "emails": [
+    "franck.samama@planity.com"
+  ],
+  "name": "Treatwell Suisse",
+  "sitemapURL": [
+    "https://www.treatwell.ch/site-map-venue-details-1.xml"
+  ],
+  "header": [
+    "Url",
+    "Nom",
+    "Statut",
+    "Code postal",
+    "Ville",
+    "Téléphone",
+    "Type",
+    "A des dispos",
+    "Identifiant interne TW",
+    "Date de parution",
+    "Nombre de catégorie de prestations",
+    "Cohérent"
+  ],
+  "extract": [
+    "html => {",
+    "const state = JSON.parse(html('#state').html().replace('window.__state__ = ', '').replace(/;$/, ''));",
+    "const venue = state.venue.venue;",
+    "const publishedDate = (venue.publishedDate || '');",
+    "const hasItems = ((venue.menu && venue.menu.menuGroups) || []).length;",
+    "const isCoherent = ((hasItems === 0) === !(!!html.html().match(/Select/)));",
+    "   return [",
+    "    (venue.uri.desktopUri),",
+    "    venue.name,",
+    "    venue.status,",
+    "    (venue.location && venue.location.address && venue.location.address.postalCode) || '',",
+    "    (venue.location && venue.location.address && venue.location.address.addressLines && venue.location.address.addressLines.slice(-1)[0]) || '',",
+    "    (venue.contact && venue.contact.phone) || '',",
+    "    (venue.type && venue.type.name) || '',",
+    "    !!html.html().match(/Select/),",
+    "    (venue.id) || '.',",
+    "    publishedDate,",
+    "    hasItems,",
+    "    isCoherent",
+    "  ];",
+    "}"
+  ],
+  "concurrency": 300
+}
