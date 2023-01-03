@@ -1,10 +1,18 @@
 {
   "emails": [
+    "faouzi.jaouani@planity.com",
+    "margaut.dalbergue@planity.com",
     "franck.samama@planity.com"
   ],
   "name": "Treatwell DE",
+  "environment": "lab",
+  "competitor": "treatwell",
+  "countryCode": "de",
   "sitemapURL": [
     "https://www.treatwell.de/site-map-venue-details-1.xml"
+  ],
+  "emptyJsonDataHeader": [
+    "address"
   ],
   "header": [
     "Url",
@@ -28,7 +36,8 @@
     "const hasItems = ((venue.menu && venue.menu.menuGroups) || []).length;",
     "const isCoherent = ((hasItems === 0) === !(!!html.html().match(/Select/)));",
     "   return [",
-    "    (venue.uri.desktopUri),",
+    "    venue.id,",
+    "    [(venue.uri.desktopUri),",
     "    venue.name,",
     "    venue.status,",
     "    (venue.location && venue.location.address && venue.location.address.postalCode) || '',",
@@ -39,7 +48,7 @@
     "    (venue.id) || '.',",
     "    publishedDate,",
     "    hasItems,",
-    "    isCoherent",
+    "    isCoherent]",
     "  ];",
     "}"
   ],

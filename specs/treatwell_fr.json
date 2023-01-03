@@ -1,25 +1,69 @@
 {
   "emails": [
+    "faouzi.jaouani@planity.com",
+    "margaut.dalbergue@planity.com",
     "franck.samama@planity.com"
   ],
   "name": "Treatwell France",
+  "environment": "lab",
+  "competitor": "treatwell",
+  "countryCode": "fr",
   "sitemapURL": [
     "https://www.treatwell.fr/site-map-venue-details-1.xml"
   ],
   "header": [
-    "Url",
-    "Nom",
-    "Statut",
-    "Adresse",
-    "Code postal",
-    "Ville",
-    "Téléphone",
-    "Type",
-    "A des dispos",
-    "Identifiant interne TW",
-    "Date de parution",
-    "Nombre de catégorie de prestations",
-    "Cohérent"
+    [
+      "Url",
+      "url"
+    ],
+    [
+      "Nom",
+      "businessName"
+    ],
+    [
+      "Statut",
+      "status"
+    ],
+    [
+      "Adresse",
+      "address"
+    ],
+    [
+      "Code postal",
+      "zipCode"
+    ],
+    [
+      "Ville",
+      "city"
+    ],
+    [
+      "Téléphone",
+      "phone"
+    ],
+    [
+      "Type",
+      "type"
+    ],
+    [
+      "A des dispos",
+      "hasAvailabilities"
+    ],
+    [
+      "Identifiant interne TW",
+      "internalId"
+    ],
+    [
+      "Date de parution",
+      "releaseDate"
+    ],
+    [
+      "Nombre de catégorie de prestations",
+      "categoryCount"
+    ],
+    [
+      "Cohérent",
+      "consistent"
+    ]
   ],
   "extract": [
     "html => {",
@@ -42,7 +86,7 @@
     "    (venue.id) || '.',",
     "    publishedDate,",
     "    hasItems,",
-    "    isCoherent,",
+    "    isCoherent]",
     "  ];",
     "}"
   ],

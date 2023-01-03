@@ -1,34 +1,81 @@
 {
   "emails": [
+    "faouzi.jaouani@planity.com",
+    "margaut.dalbergue@planity.com",
     "franck.samama@planity.com"
   ],
   "name": "Treatwell GR",
+  "environment": "lab",
+  "competitor": "treatwell",
+  "countryCode": "gr",
   "sitemapURL": [
     "https://www.treatwell.gr/site-map-venues-treatment-location-1.xml"
   ],
+  "emptyJsonDataHeader": [
+    "address"
+  ],
   "header": [
-    "Url",
-    "Nom",
-    "Statut",
-    "Code postal",
-    "Ville",
-    "Téléphone",
-    "Type",
-    "A des dispos",
-    "Identifiant interne TW",
-    "Date de parution",
-    "Nombre de catégorie de prestations",
-    "Cohérent"
+    [
+      "Url",
+      "url"
+    ],
+    [
+      "Nom",
+      "businessName"
+    ],
+    [
+      "Statut",
+      "status"
+    ],
+    [
+      "Code postal",
+      "zipCode"
+    ],
+    [
+      "Ville",
+      "city"
+    ],
+    [
+      "Téléphone",
+      "phone"
+    ],
+    [
+      "Type",
+      "type"
+    ],
+    [
+      "A des dispos",
+      "hasAvailabilities"
+    ],
+    [
+      "Identifiant interne TW",
+      "internalId"
+    ],
+    [
+      "Date de parution",
+      "releaseDate"
+    ],
+    [
+      "Nombre de catégorie de prestations",
+      "categoryCount"
+    ],
+    [
+      "Cohérent",
+      "consistent"
+    ]
   ],
   "extract": [
-    "html => {",
+    "async (html,cheerio,fetch) => {",
     "const state = JSON.parse(html('#state').html().replace('window.__state__ = ', '').replace(/;$/, ''));",
-    "const venue = state.venue.venue;",
+    "const realHtml = cheerio.load(await fetch(state.browse.results[0].data.uri.desktopUri));",
+    "const realState = JSON.parse(realHtml('#state').html().replace('window.__state__ = ', '').replace(/;$/, ''));",
+    "const venue = realState.venue.venue;",
     "const publishedDate = (venue.publishedDate || '');",
     "const hasItems = ((venue.menu && venue.menu.menuGroups) || []).length;",
     "const isCoherent = ((hasItems === 0) === !(!!html.html().match(/Select/)));",
     "   return [",
-    "    (venue.uri.desktopUri),",
+    "    venue.id,",
+    "    [(venue.uri.desktopUri),",
     "    venue.name,",
     "    venue.status,",
     "    (venue.location && venue.location.address && venue.location.address.postalCode) || '',",
@@ -39,7 +86,7 @@
     "    (venue.id) || '.',",
     "    publishedDate,",
     "    hasItems,",
-    "    isCoherent",
+    "    isCoherent]",
     "  ];",
     "}"
   ],

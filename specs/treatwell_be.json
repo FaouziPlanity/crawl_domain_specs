@@ -1,24 +1,68 @@
 {
   "emails": [
+    "faouzi.jaouani@planity.com",
+    "margaut.dalbergue@planity.com",
     "franck.samama@planity.com"
   ],
   "name": "Treatwell Belgium",
+  "environment": "lab",
+  "competitor": "treatwell",
+  "countryCode": "be",
   "sitemapURL": [
     "https://www.treatwell.be/site-map-venue-details-1.xml"
   ],
+  "emptyJsonDataHeader": [
+    "address"
+  ],
   "header": [
-    "Url",
-    "Nom",
-    "Statut",
-    "Code postal",
-    "Ville",
-    "Téléphone",
-    "Type",
-    "A des dispos",
-    "Identifiant interne TW",
-    "Date de parution",
-    "Nombre de catégorie de prestations",
-    "Cohérent"
+    [
+      "Url",
+      "url"
+    ],
+    [
+      "Nom",
+      "businessName"
+    ],
+    [
+      "Statut",
+      "status"
+    ],
+    [
+      "Code postal",
+      "zipCode"
+    ],
+    [
+      "Ville",
+      "city"
+    ],
+    [
+      "Téléphone",
+      "phone"
+    ],
+    [
+      "Type",
+      "type"
+    ],
+    [
+      "A des dispos",
+      "hasAvailabilities"
+    ],
+    [
+      "Identifiant interne TW",
+      "internalId"
+    ],
+    [
+      "Date de parution",
+      "releaseDate"
+    ],
+    [
+      "Nombre de catégorie de prestations",
+      "categoryCount"
+    ],
+    [
+      "Cohérent",
+      "consistent"
+    ]
   ],
   "extract": [
     "html => {",
@@ -28,7 +72,8 @@
     "const hasItems = ((venue.menu && venue.menu.menuGroups) || []).length;",
     "const isCoherent = ((hasItems === 0) === !(!!html.html().match(/Select/)));",
     "   return [",
-    "    (venue.uri.desktopUri),",
+    "    '.',",
+    "    [(venue.uri.desktopUri),",
     "    venue.name,",
     "    venue.status,",
     "    (venue.location && venue.location.address && venue.location.address.postalCode) || '',",
@@ -39,7 +84,7 @@
     "    (venue.id) || '.',",
     "    publishedDate,",
     "    hasItems,",
-    "    isCoherent",
+    "    isCoherent]",
     "  ];",
     "}"
   ],

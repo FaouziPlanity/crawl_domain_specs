@@ -4,12 +4,12 @@
     "margaut.dalbergue@planity.com",
     "franck.samama@planity.com"
   ],
-  "name": "Treatwell UK",
+  "name": "Treatwell Autriche",
   "environment": "lab",
   "competitor": "treatwell",
-  "countryCode": "uk",
+  "countryCode": "at",
   "sitemapURL": [
-    "https://www.treatwell.co.uk/site-map-venue-details-1.xml"
+    "https://www.treatwell.at/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [
     "address"
