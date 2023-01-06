@@ -15,18 +15,54 @@
     "address"
   ],
   "header": [
-    "Url",
-    "Nom",
-    "Statut",
-    "Code postal",
-    "Ville",
-    "Téléphone",
-    "Type",
-    "A des dispos",
-    "Identifiant interne TW",
-    "Date de parution",
-    "Nombre de catégorie de prestations",
-    "Cohérent"
+    [
+      "Url",
+      "url"
+    ],
+    [
+      "Nom",
+      "businessName"
+    ],
+    [
+      "Statut",
+      "status"
+    ],
+    [
+      "Code postal",
+      "zipCode"
+    ],
+    [
+      "Ville",
+      "city"
+    ],
+    [
+      "Téléphone",
+      "phone"
+    ],
+    [
+      "Type",
+      "type"
+    ],
+    [
+      "A des dispos",
+      "hasAvailabilities"
+    ],
+    [
+      "Identifiant interne TW",
+      "internalId"
+    ],
+    [
+      "Date de parution",
+      "releaseDate"
+    ],
+    [
+      "Nombre de catégorie de prestations",
+      "categoryCount"
+    ],
+    [
+      "Cohérent",
+      "consistent"
+    ]
   ],
   "extract": [
     "html => {",
