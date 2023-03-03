@@ -1,14 +1,12 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com",
-    "margaut.dalbergue@planity.com",
-    "franck.samama@planity.com"
+    "faouzi.jaouani@planity.com"
   ],
   "name": "Treatwell UK",
-  "environment": "lab",
+  "environment": "production",
   "competitor": "treatwell",
   "countryCode": "uk",
-  "sitemapURL": [s
+  "sitemapURL": [
     "https://www.treatwell.co.uk/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [

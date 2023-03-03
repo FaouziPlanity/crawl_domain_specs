@@ -1,11 +1,9 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com",
-    "margaut.dalbergue@planity.com",
-    "franck.samama@planity.com"
+    "faouzi.jaouani@planity.com"
   ],
   "name": "Treatwell Autriche",
-  "environment": "lab",
+  "environment": "production",
   "competitor": "treatwell",
   "countryCode": "at",
   "sitemapURL": [
