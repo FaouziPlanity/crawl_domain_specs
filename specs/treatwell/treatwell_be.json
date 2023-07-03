@@ -1,13 +1,14 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com"
+    "faouzi.jaouani@planity.com",
+    "slim.feki@planity.com"
   ],
-  "name": "Treatwell GR",
+  "name": "Treatwell Belgium",
   "environment": "production",
   "competitor": "treatwell",
-  "countryCode": "gr",
+  "countryCode": "be",
   "sitemapURL": [
-    "https://www.treatwell.gr/site-map-venues-treatment-location-1.xml"
+    "https://www.treatwell.be/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [
     "address"
@@ -63,16 +64,14 @@
     ]
   ],
   "extract": [
-    "async (html,cheerio,fetch) => {",
+    "html => {",
     "const state = JSON.parse(html('#state').html().replace('window.__state__ = ', '').replace(/;$/, ''));",
-    "const realHtml = cheerio.load(await fetch(state.browse.results[0].data.uri.desktopUri));",
-    "const realState = JSON.parse(realHtml('#state').html().replace('window.__state__ = ', '').replace(/;$/, ''));",
-    "const venue = realState.venue.venue;",
+    "const venue = state.venue.venue;",
     "const publishedDate = (venue.publishedDate || '');",
     "const hasItems = ((venue.menu && venue.menu.menuGroups) || []).length;",
     "const isCoherent = ((hasItems === 0) === !(!!html.html().match(/Select/)));",
     "   return [",
-    "    venue.id,",
+    "    '.',",
     "    [(venue.uri.desktopUri),",
     "    venue.name,",
     "    venue.status,",

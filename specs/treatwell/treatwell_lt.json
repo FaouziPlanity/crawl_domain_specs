@@ -1,13 +1,14 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com"
+    "faouzi.jaouani@planity.com",
+    "slim.feki@planity.com"
   ],
-  "name": "Treatwell Suisse",
+  "name": "Treatwell Lituanie",
   "environment": "production",
   "competitor": "treatwell",
-  "countryCode": "ch",
+  "countryCode": "lt",
   "sitemapURL": [
-    "https://www.treatwell.ch/site-map-venue-details-1.xml"
+    "https://www.treatwell.lt/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [
     "address"

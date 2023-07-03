@@ -1,13 +1,14 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com"
+    "faouzi.jaouani@planity.com",
+    "slim.feki@planity.com"
   ],
-  "name": "Treatwell DE",
+  "name": "Treatwell Autriche",
   "environment": "production",
   "competitor": "treatwell",
-  "countryCode": "de",
+  "countryCode": "at",
   "sitemapURL": [
-    "https://www.treatwell.de/site-map-venue-details-1.xml"
+    "https://www.treatwell.at/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [
     "address"

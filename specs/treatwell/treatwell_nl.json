@@ -1,13 +1,14 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com"
+    "faouzi.jaouani@planity.com",
+    "slim.feki@planity.com"
   ],
-  "name": "Treatwell Ireland",
+  "name": "Treatwell Pays-Bas",
   "environment": "production",
   "competitor": "treatwell",
-  "countryCode": "ie",
+  "countryCode": "nl",
   "sitemapURL": [
-    "https://www.treatwell.ie/site-map-venue-details-1.xml"
+    "https://www.treatwell.nl/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [
     "address"
@@ -70,7 +71,7 @@
     "const hasItems = ((venue.menu && venue.menu.menuGroups) || []).length;",
     "const isCoherent = ((hasItems === 0) === !(!!html.html().match(/Select/)));",
     "   return [",
-    "    venue.id,",
+    "     venue.id,",
     "    [(venue.uri.desktopUri),",
     "    venue.name,",
     "    venue.status,",

@@ -1,16 +1,14 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com"
+    "faouzi.jaouani@planity.com",
+    "slim.feki@planity.com"
   ],
-  "name": "Treatwell Lituanie",
+  "name": "Treatwell France",
   "environment": "production",
   "competitor": "treatwell",
-  "countryCode": "lt",
+  "countryCode": "fr",
   "sitemapURL": [
-    "https://www.treatwell.lt/site-map-venue-details-1.xml"
-  ],
-  "emptyJsonDataHeader": [
-    "address"
+    "https://www.treatwell.fr/site-map-venue-details-1.xml"
   ],
   "header": [
     [
@@ -24,6 +22,10 @@
     [
       "Statut",
       "status"
+    ],
+    [
+      "Adresse",
+      "address"
     ],
     [
       "Code postal",
@@ -74,6 +76,7 @@
     "    [(venue.uri.desktopUri),",
     "    venue.name,",
     "    venue.status,",
+    "    (venue.location && venue.location.address && venue.location.address.addressLines && venue.location.address.addressLines[0]) || '',",
     "    (venue.location && venue.location.address && venue.location.address.postalCode) || '',",
     "    (venue.location && venue.location.address && venue.location.address.addressLines && venue.location.address.addressLines.slice(-1)[0]) || '',",
     "    (venue.contact && venue.contact.phone) || '',",

@@ -1,13 +1,14 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com"
+    "faouzi.jaouani@planity.com",
+    "slim.feki@planity.com"
   ],
-  "name": "Treatwell UK",
+  "name": "Treatwell Portugal",
   "environment": "production",
   "competitor": "treatwell",
-  "countryCode": "uk",
+  "countryCode": "pt",
   "sitemapURL": [
-    "https://www.treatwell.co.uk/site-map-venue-details-1.xml"
+    "https://www.treatwell.pt/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [
     "address"
@@ -70,7 +71,7 @@
     "const hasItems = ((venue.menu && venue.menu.menuGroups) || []).length;",
     "const isCoherent = ((hasItems === 0) === !(!!html.html().match(/Select/)));",
     "   return [",
-    "    venue.id,",
+    "    '.',",
     "    [(venue.uri.desktopUri),",
     "    venue.name,",
     "    venue.status,",

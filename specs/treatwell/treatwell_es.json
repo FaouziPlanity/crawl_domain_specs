@@ -1,13 +1,14 @@
 {
   "emails": [
-    "faouzi.jaouani@planity.com"
+    "faouzi.jaouani@planity.com",
+    "slim.feki@planity.com"
   ],
-  "name": "Treatwell Italy",
+  "name": "Treatwell Espagne",
   "environment": "production",
   "competitor": "treatwell",
-  "countryCode": "it",
+  "countryCode": "es",
   "sitemapURL": [
-    "https://www.treatwell.it/site-map-venue-details-1.xml"
+    "https://www.treatwell.es/site-map-venue-details-1.xml"
   ],
   "emptyJsonDataHeader": [
     "address"
